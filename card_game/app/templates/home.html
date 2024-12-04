@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="title">Card Game</h1>
+
+<div class="Container">
+  <p class="body">
+    Welcome to the spotify card trading game <br />
+    To get started please login or register <br />
+    Then follow the prompts to link your spotify account <br />
+  </p>
+</div>
+<div class="Container">
+  <div class="button-group">
+    <a href="{{ url_for('login') }}" class="btn btn-outline-secondary">Login</a>
+    <a href="{{ url_for('register') }}" class="btn btn-outline-secondary"
+      >Register</a
+    >
+  </div>
+</div>
+
+{% endblock %}

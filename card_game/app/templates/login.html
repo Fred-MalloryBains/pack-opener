@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+<title>Login</title>
+
+<!-- Uses a container and form group to add nice layout -->
+
+<h1 class="Subheading">Enter your details below:</h1>
+
+<div class="Container">
+  <form method="POST" action="" name="login">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      {{ form.username(class="form-control text-black") }}
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="password">Password</label>
+        {{ form.password(class="form-control text-black") }}
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

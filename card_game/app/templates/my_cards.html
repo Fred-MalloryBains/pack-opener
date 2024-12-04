@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends "base.html" %} {% block content %}
+
+<h1 class="title">My cards</h1>
+<div class="Container">
+  <div class="text-center">
+    <label class="form-check-label">
+      <input
+        id="isCollected"
+        type="checkbox"
+        class="form-check-input"
+        checked
+      />
+      Collected
+    </label>
+    <select
+      id="rarity-search"
+      class="form-select form-select-lg mb-3"
+      aria-label="Select rarity"
+    >
+      <option selected>Select rarity</option>
+      <option value="1">Common</option>
+      <option value="2">Rare</option>
+      <option value="3">Epic</option>
+      <option value="4">Legendary</option>
+      <option value="5">All</option>
+    </select>
+  </div>
+</div>
+<div class="Container">
+  <div class="container">
+    <div class="row" id="query-results">
+      <!-- cards here -->
+    </div>
+  </div>
+</div>
+
+{%endblock%}

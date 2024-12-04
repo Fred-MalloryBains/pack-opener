@@ -1,0 +1,64 @@
+{%extends "base.html"%} {%block content %}
+<title>Dashboard</title>
+<div class="coins">
+  <p>Coins: a few</p>
+</div>
+<div class="Container">
+  <div class="text-center">
+    <a href="{{ url_for('link_spotify') }}" class="btn btn-outline-secondary"
+      >Link Spotify</a
+    >
+  </div>
+</div>
+<div class="Container">
+  <div class="text-center">
+    <p class="body">my cards</p>
+    <a href="{{ url_for('my_cards') }}" class="btn btn-outline-secondary"
+      >View all</a
+    >
+  </div>
+</div>
+<div class="Container">
+  <div class="text-center">
+    <p class="body">store</p>
+
+    <div class="container">
+      <div class="row">
+        {%for pack in store_packs%}
+        <div class="col-md-4 d-flex align-items-stretch mb-4">
+          <div class="card">
+            <div
+              class="card-body d-flex flex-column justify-content-center align-items-center"
+            >
+              <h5 class="card-title">{{ pack.name }}</h5>
+              <p class="card-text">Cost: {{ pack.price }}</p>
+
+              <a
+                class="btn btn-primary buy-pack-btn"
+                data-pack-id="{{ pack.Id }}"
+                >Buy</a
+              >
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="Container">
+  <div class="text-center">
+    <p class="body">my packs</p>
+    <div class="container">
+      <div class="row" id="my_packs">
+        <!-- user packs loaded here -->
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <a href="{{ url_for('open_my_packs') }}" class="btn btn-outline-secondary"
+      >open your packs here
+    </a>
+  </div>
+</div>
+{% endblock %}

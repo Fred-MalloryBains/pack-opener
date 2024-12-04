@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "base.html" %} {% block content %}
+
+<h1 class="title">My packs</h1>
+<div class="Container">
+  <div class="container">
+    <div class="row">
+      {% if user_packs %} {% for pack in user_packs %}
+      <div class="col-md-4 d-flex align-items-stretch mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ pack.name }}</h5>
+          <p class="card-text">quantity: {{ pack.quantity }}</p>
+          <a
+            href="{{ url_for('open_pack', packId = pack.id) }}"
+            class="btn btn-outline-secondary"
+            >open pack
+          </a>
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <p>There are no packs to display.</p>
+      {% endif %}
+    </div>
+    <!-- cards here -->
+  </div>
+</div>
+{%endblock%}

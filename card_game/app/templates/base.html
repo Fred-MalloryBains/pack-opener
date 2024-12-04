@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <!-- CSS reference -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='favicon-2.ico') }}"
+      type="image/x-icon"
+    />
+  </head>
+  <!-- Navigation bar from the module website -->
+  <body>
+    <!-- drop down menu from bootstrap website -->
+    <div class="menu">
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-lg dropdown-toggle"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        ≡
+      </button>
+      <div class="dropdown-menu">
+        <a
+          class="dropdown-item"
+          href="{{ url_for('index') }}"
+          class="btn btn-outline-secondary"
+          >Home</a
+        >
+        <a
+          class="dropdown-item"
+          href="{{ url_for('login') }}"
+          class="btn btn-outline-secondary"
+          >Login</a
+        >
+        <a
+          class="dropdown-item"
+          href="{{ url_for('dashboard') }}"
+          class="btn btn-outline-secondary"
+          >dashboard</a
+        >
+        <a
+          class="dropdown-item"
+          href="{{ url_for('open_pack') }}"
+          class="btn btn-outline-secondary"
+          >open pack</a
+        >
+        <a
+          class="dropdown-item"
+          href="{{ url_for('profile') }}"
+          class="btn btn-outline-secondary"
+          >profile</a
+        >
+        <div class="dropdown-divider"></div>
+        <a
+          class="dropdown-item"
+          href="{{ url_for('logout') }}"
+          class="btn btn-outline-secondary"
+          >Logout</a
+        >
+      </div>
+    </div>
+
+    <div class="content">{% block content %} {% endblock %}</div>
+
+    <!-- Unused JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='jquery.min.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='filter.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='storePacks.js') }}"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+<title>Login</title>
+<div class="Container">
+  <p>My Details</p>
+  <div class="details">
+    <div class="detail-item">
+      <label>Email:</label>
+      <p class="detail-content">{{ user.email }}</p>
+    </div>
+    <div class="detail-item">
+      <label>Username:</label>
+      <p class="detail-content">{{ user.username }}</p>
+    </div>
+    <div class="detail-item">
+      <label>Spotify Linked:</label>
+      <p class="detail-content">{{ user.spotify_linked }}</p>
+    </div>
+  </div>
+</div>
+<div class="Container">
+  <div class="detail-item">
+    <label>Cards collected:</label>
+    <p class="detail-content">{{ user.no_of_cards }}</p>
+  </div>
+  <div class="detail-item">
+    <label>Packs owned:</label>
+    <p class="detail-content">{{ user.no_of_packs }}</p>
+  </div>
+</div>
+
+<div class="Container">
+  <div class="text-center">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary"
+      >your dashboard</a
+    >
+  </div>
+</div>
+{% endblock %}
