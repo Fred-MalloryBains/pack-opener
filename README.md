@@ -19,4 +19,6 @@ SQL, python
 To run the code you need to ideally create and run a virtual environment 
 Then run pip install -r requirements.txt, followed by flask run or python run.py
 
-
+**Online** <br>
+You can also find this project by opening the link: <br>
+[click me ](fredmallorybains.pythonanywhere.com)
